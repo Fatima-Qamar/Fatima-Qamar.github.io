@@ -99,7 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'FIXORA // AI-POWERED HOME SERVICES MARKETPLACE',
       focus: 'AI • PRODUCT DEV • MARKETPLACE • ENTREPRENEURSHIP',
       role: 'FOUNDER & CEO',
-      text: 'Leading Fixora product planning, AI-assisted platform architecture, and intelligent service-matching workflows connecting homeowners with service providers.'
+      text: 'Leading Fixora product planning, AI-assisted platform architecture, and intelligent service-matching workflows connecting homeowners with service providers.',
+      github: 'https://github.com/Fatima-Qamar/FIXORA'
     },
     'skillmatch': {
       title: 'SKILLMATCH AI // CAREER & SKILL GAP PLATFORM',
@@ -126,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="font-size: 0.8rem; color: var(--accent-green); font-weight: bold; margin-bottom: 0.8rem;">${data.role}</div>
           <div style="font-size: 0.75rem; color: var(--text-dim); margin-bottom: 1rem;">FOCUS: ${data.focus}</div>
           <p style="font-size: 0.88rem; color: var(--text-code); line-height: 1.6;">${data.text}</p>
+          ${data.github ? `<div style="margin-top: 1.2rem;"><a href="${data.github}" target="_blank" rel="noopener" class="cyber-btn btn-cyber-dark" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; display: inline-block;">VIEW ON GITHUB ↗</a></div>` : ''}
         `;
         modalOverlay.classList.add('active');
       }
