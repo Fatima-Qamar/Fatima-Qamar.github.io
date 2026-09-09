@@ -101,11 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
       role: 'FOUNDER & CEO',
       text: 'Leading Fixora product planning, AI-assisted platform architecture, and intelligent service-matching workflows connecting homeowners with service providers.'
     },
-    'ecommerce': {
-      title: 'E-COMMERCE PRODUCT FILTERING PLATFORM',
-      focus: 'WEB DEV • UI/UX • JAVASCRIPT • REACT.JS',
-      role: 'FRONT-END DEVELOPER',
-      text: 'Responsive web platform featuring real-time client-side search, faceted multi-attribute product filters, and optimized component rendering.'
+    'skillmatch': {
+      title: 'SKILLMATCH AI // CAREER & SKILL GAP PLATFORM',
+      focus: 'REACT.JS • JAVASCRIPT • REST APIs • AI INTEGRATION',
+      role: 'DEVELOPER',
+      text: 'Built an AI-powered career guidance platform with skill scoring and personalized career-path recommendations via REST APIs.'
+    },
+    'smartspend': {
+      title: 'SMARTSPEND AI // PERSONAL FINANCE ANALYZER',
+      focus: 'REACT.JS • JAVASCRIPT • REST APIs • AI INTEGRATION',
+      role: 'DEVELOPER',
+      text: 'Built an AI-powered personal finance web app with budget tracking and AI-driven saving recommendations connected via REST APIs.'
     }
   };
 
