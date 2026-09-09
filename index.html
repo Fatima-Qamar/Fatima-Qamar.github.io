@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FATIMA QAMAR // AI RESEARCHER & DEVELOPER PORTFOLIO</title>
+  <meta name="description" content="Portfolio of Fatima Qamar — BS Computer Science Student at PAF-IAST, AI Researcher & Software Developer.">
+
+  <!-- External Stylesheet Backup -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Embedded Self-Contained Stylesheet for Guaranteed Zero-Cache Rendering -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700;800;900&family=Syne:wght@800;900&display=swap');
+
+    :root {
+      /* Cyber Dark Color Palette */
+      --bg-dark: #08090c;
+      --bg-grid: #0e1017;
+      --bg-card: #0f111a;
+      --bg-card-hover: #151824;
+      --bg-terminal: #0b0c12;
+      
+      --accent-red: #ff2a4b;
+      --accent-red-dark: #c91834;
+      --accent-red-glow: rgba(255, 42, 75, 0.35);
+      
+      --accent-green: #00ff88;
+      --accent-green-bg: rgba(0, 255, 136, 0.12);
+      --accent-cyan: #00f2fe;
+      --accent-cyan-bg: rgba(0, 242, 254, 0.12);
+      --accent-yellow: #ffb703;
+      --accent-orange: #ff6b35;
+      --accent-purple: #a855f7;
+
+      --text-main: #ffffff;
+      --text-dim: #94a3b8;
+      --text-muted: #64748b;
+      --text-code: #cbd5e1;
+
+      --border-dim: #1e2330;
+      --border-bright: #333b4f;
+      --border-red: #ff2a4b;
+
+      --font-title: 'Space Grotesk', 'Syne', Impact, 'Arial Black', sans-serif;
+      --font-mono: 'JetBrains Mono', Consolas, 'Courier New', monospace;
+
+      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Base Resets */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: #08090c;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+      background-position: center center;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Scroll Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent-red);
+      width: 0%;
+      z-index: 9999;
+      box-shadow: 0 0 10px var(--accent-red);
+    }
+
+    /* Top Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8, 9, 12, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 42, 75, 0.25);
+      padding: 0.85rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+    }
+
+    .brand-badge-red {
+      background: var(--accent-red);
+      color: #ffffff;
+      font-family: var(--font-title);
+      font-weight: 900;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.55rem;
+      letter-spacing: 0.05em;
+      box-shadow: 2px 2px 0px #ffffff;
+    }
+
+    .brand-title-text {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+
+    .nav-brand:hover .brand-title-text {
+      color: var(--accent-red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #ffffff;
+      background: rgba(255, 42, 75, 0.15);
+      border-color: var(--accent-red);
+      box-shadow: 0 0 12px rgba(255, 42, 75, 0.25);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-dim);
+      color: var(--text-main);
+      font-size: 1.2rem;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+    }
+
+    /* Side Floating Tab */
+    .side-floating-tab {
+      position: fixed;
+      right: 0;
+      top: 45%;
+      transform: translateY(-50%);
+      z-index: 999;
+      background: #0d0f17;
+      border: 1px solid var(--accent-red);
+      border-right: none;
+      padding: 1rem 0.4rem;
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--text-main);
+      cursor: pointer;
+      box-shadow: -4px 0px 15px rgba(255, 42, 75, 0.25);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .side-floating-tab:hover {
+      background: var(--accent-red);
+      color: #ffffff;
+    }
+
+    /* General Sections */
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 2.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-red);
+      margin-top: 0.5rem;
+    }
+
+    /* Cyber Card */
+    .cyber-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-bright);
+      padding: 1.75rem;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .cyber-card:hover {
+      border-color: var(--accent-red);
+      background: var(--bg-card-hover);
+      box-shadow: 0 0 20px rgba(255, 42, 75, 0.15);
+    }
+
+    /* Red Left Accent Bar */
+    .accent-bar-left {
+      border-left: 4px solid var(--accent-red);
+    }
+
+    /* Buttons in HUD Style */
+    .cyber-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.75rem 1.4rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .btn-cyber-red {
+      background: var(--accent-red);
+      color: #ffffff;
+      border: 1px solid var(--accent-red);
+      box-shadow: 4px 4px 0px #ffffff;
+    }
+
+    .btn-cyber-red:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #ffffff;
+    }
+
+    .btn-cyber-dark {
+      background: #0d0f17;
+      color: #ffffff;
+      border: 1px solid var(--border-bright);
+      box-shadow: 4px 4px 0px var(--accent-red);
+    }
+
+    .btn-cyber-dark:hover {
+      border-color: var(--accent-red);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--accent-red);
+    }
+
+    .btn-cyber-outline {
+      background: transparent;
+      color: var(--text-dim);
+      border: 1px solid var(--border-bright);
+    }
+
+    .btn-cyber-outline:hover {
+      color: #ffffff;
+      border-color: var(--accent-red);
+      background: rgba(255, 42, 75, 0.1);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding-top: 8.5rem;
+      padding-bottom: 5rem;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-main-title {
+      font-family: var(--font-title);
+      font-size: 5.2rem;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-sub-title {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent-red);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Aesthetic Glass Fade Hero Box */
+    .hero-desc-box {
+      background: rgba(13, 15, 23, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-left: 4px solid var(--accent-red);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.6rem 2rem;
+      margin-bottom: 1.8rem;
+      max-width: 920px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 42, 75, 0.05);
+      animation: fadeInHero 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-desc-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 42, 75, 0.12), transparent);
+      animation: subtleShine 4s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes fadeInHero {
+      0% { opacity: 0; transform: translateY(15px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes subtleShine {
+      0% { left: -100%; }
+      50%, 100% { left: 100%; }
+    }
+
+    .hero-desc-text {
+      font-size: 1.08rem;
+      color: #ffffff;
+      line-height: 1.75;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-sub-note {
+      font-size: 0.95rem;
+      color: var(--accent-cyan);
+      line-height: 1.65;
+      font-weight: 500;
+      padding-top: 0.75rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.15);
+      margin-top: 0.4rem;
+    }
+
+    .status-box-cyber {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #090a0f;
+      border: 1px solid #ffffff;
+      padding: 0.5rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      box-shadow: 4px 4px 0px var(--accent-red);
+      margin-bottom: 2rem;
+    }
+
+    .status-dot-green {
+      width: 10px;
+      height: 10px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-green);
+      animation: pulseGreen 2s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .hero-action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+    }
+
+    .about-text-p {
+      font-size: 0.98rem;
+      color: var(--text-code);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-vision-box {
+      background: #111420;
+      border: 1px solid var(--accent-red);
+      padding: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .about-vision-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-red);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    /* Research Section */
+    .research-hud-card {
+      background: #0e111a;
+      border: 1px solid var(--accent-red);
+      padding: 2.25rem;
+      position: relative;
+      box-shadow: 0 0 30px rgba(255, 42, 75, 0.12);
+    }
+
+    .research-hud-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .research-badge-red {
+      background: var(--accent-red);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.35rem 0.8rem;
+      letter-spacing: 0.08em;
+      display: inline-block;
+    }
+
+    .research-title-text {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .research-p-desc {
+      font-size: 0.98rem;
+      color: var(--text-code);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .research-box-dark {
+      background: #090a0f;
+      border: 1px solid var(--border-bright);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .research-area-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .research-pill {
+      background: rgba(255, 42, 75, 0.1);
+      border: 1px solid var(--accent-red);
+      color: #ffffff;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      font-weight: 600;
+    }
+
+    .research-img-box {
+      border: 1px solid var(--border-bright);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .research-img-src {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Projects Section */
+    .projects-grid-cyber {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .project-card-cyber {
+      background: var(--bg-card);
+      border: 1px solid var(--border-bright);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      transition: var(--transition);
+    }
+
+    .project-card-cyber:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(255, 42, 75, 0.15);
+    }
+
+    .project-role-tag {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-bright);
+      font-size: 0.7rem;
+      color: #ffffff;
+      padding: 0.2rem 0.5rem;
+    }
+
+    .project-title-h3 {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-top: 0.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-sub-tag {
+      font-size: 0.85rem;
+      color: var(--accent-red);
+      font-weight: 600;
+      margin-bottom: 0.85rem;
+    }
+
+    .project-p-text {
+      font-size: 0.9rem;
+      color: var(--text-code);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-focus-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .focus-badge {
+      background: #090a0e;
+      border: 1px solid var(--border-dim);
+      color: var(--text-dim);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+    }
+
+    .btn-detail-cyber {
+      font-size: 0.78rem;
+      color: var(--accent-red);
+      font-weight: 700;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .btn-detail-cyber:hover {
+      text-decoration: underline;
+    }
+
+    /* Hackathons */
+    .hackathon-card-hud {
+      background: #0d0e17;
+      border: 1px solid var(--accent-yellow);
+      padding: 2.25rem;
+      box-shadow: 0 0 20px rgba(255, 183, 3, 0.1);
+    }
+
+    .hackathon-badge-yellow {
+      background: var(--accent-yellow);
+      color: #07090e;
+      font-weight: 900;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.75rem;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Skills Pill Boxes */
+    .skill-pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .skill-pill-box {
+      background: #0f111a;
+      border: 1px solid var(--border-bright);
+      padding: 0.75rem 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #ffffff;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 3px 3px 0px var(--shadow-color, #1e2330);
+    }
+
+    .skill-pill-box[data-color="red"] { --shadow-color: var(--accent-red); border-color: var(--accent-red); }
+    .skill-pill-box[data-color="green"] { --shadow-color: var(--accent-green); border-color: var(--accent-green); }
+    .skill-pill-box[data-color="cyan"] { --shadow-color: var(--accent-cyan); border-color: var(--accent-cyan); }
+    .skill-pill-box[data-color="yellow"] { --shadow-color: var(--accent-yellow); border-color: var(--accent-yellow); }
+    .skill-pill-box[data-color="purple"] { --shadow-color: var(--accent-purple); border-color: var(--accent-purple); }
+
+    .skill-pill-box:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px var(--shadow-color, #ffffff);
+    }
+
+    .skill-pill-box .skill-tooltip {
+      position: absolute;
+      bottom: 115%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: #090a0f;
+      border: 1px solid var(--shadow-color, var(--accent-green));
+      padding: 0.5rem 0.85rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s ease;
+      z-index: 100;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    }
+
+    .skill-pill-box:hover .skill-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .tooltip-cat {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .tooltip-level {
+      font-size: 0.75rem;
+      color: var(--accent-green);
+      font-weight: bold;
+    }
+
+    /* Experience Timeline */
+    .timeline-hud {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline-hud::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent-red);
+    }
+
+    .timeline-block {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-block::before {
+      content: '';
+      position: absolute;
+      left: -2.35rem;
+      top: 0.4rem;
+      width: 10px;
+      height: 10px;
+      background: var(--accent-red);
+    }
+
+    /* Education Grid */
+    .edu-grid-hud {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    /* Interests Grid */
+    .interests-grid-hud {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .interest-box-cyber {
+      background: #0f111a;
+      border: 1px solid var(--border-bright);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .interest-box-cyber:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(255, 42, 75, 0.2);
+    }
+
+    .interest-icon-cyber {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .interest-name-cyber {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    /* Journey Roadmap */
+    .journey-roadmap-hud {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .journey-step-hud {
+      background: #0f111a;
+      border: 1px solid var(--border-bright);
+      padding: 1.5rem;
+      border-top: 3px solid var(--accent-red);
+    }
+
+    /* Contact Section */
+    .contact-grid-hud {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+    }
+
+    .contact-box-item {
+      background: #0d0f17;
+      border: 1px solid var(--border-bright);
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form-cyber {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-input-cyber {
+      background: #090a0f;
+      border: 1px solid var(--border-bright);
+      padding: 0.85rem 1rem;
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    .form-input-cyber:focus {
+      outline: none;
+      border-color: var(--accent-red);
+      box-shadow: 0 0 10px rgba(255, 42, 75, 0.2);
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 9, 12, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box-hud {
+      background: #0e111a;
+      border: 2px solid var(--accent-red);
+      max-width: 650px;
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 0 40px rgba(255, 42, 75, 0.3);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent-red);
+      color: #fff;
+      border: none;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    /* Toast */
+    .toast-hud {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #0e111a;
+      border: 1px solid var(--accent-green);
+      color: #ffffff;
+      padding: 0.85rem 1.4rem;
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.25);
+      z-index: 10000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      font-size: 0.85rem;
+    }
+
+    .toast-hud.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem 0;
+      background: #06070a;
+      border-top: 1px solid var(--border-dim);
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    /* Interactive Dynamic Cursor Light & Glowing Spotlight */
+    .cursor-light {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 42, 75, 0.22) 0%, rgba(0, 242, 254, 0.08) 35%, transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 99999;
+      transition: transform 0.04s cubic-bezier(0.1, 1, 0.1, 1), opacity 0.3s ease;
+      mix-blend-mode: screen;
+    }
+
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-red);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 100000;
+      box-shadow: 0 0 16px var(--accent-red), 0 0 30px var(--accent-cyan);
+      transition: transform 0.01s linear, opacity 0.3s ease;
+    }
+
+    /* 3D Depth Elevation & Dynamic Perspective */
+    body {
+      perspective: 1200px;
+    }
+
+    .cyber-card,
+    .project-card-cyber,
+    .interest-box-cyber,
+    .skill-pill-box,
+    .hackathon-card-hud,
+    .journey-step-hud,
+    .hero-desc-box {
+      transform-style: preserve-3d;
+      transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                  box-shadow 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                  border-color 0.3s ease,
+                  background 0.3s ease;
+      will-change: transform;
+    }
+
+    .cyber-card:hover,
+    .project-card-cyber:hover {
+      transform: translateY(-8px) rotateX(3deg) rotateY(-2deg) scale3d(1.01, 1.01, 1.01);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 42, 75, 0.28);
+      border-color: var(--accent-red);
+    }
+
+    .interest-box-cyber:hover {
+      transform: translateY(-6px) rotateX(5deg) scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 42, 75, 0.35);
+      border-color: var(--accent-red);
+    }
+
+    .skill-pill-box:hover {
+      transform: translate(-3px, -4px) scale(1.06);
+      box-shadow: 6px 6px 0px var(--shadow-color, #ffffff), 0 12px 28px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-desc-box:hover {
+      transform: translateY(-5px) rotateX(2deg) rotateY(1deg);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.8), -5px 0 25px rgba(255, 42, 75, 0.35);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 992px) {
+      .about-grid, .research-hud-grid, .projects-grid-cyber, .edu-grid-hud, .contact-grid-hud {
+        grid-template-columns: 1fr;
+      }
+      .hero-main-title {
+        font-size: 3.8rem;
+      }
+      .interests-grid-hud {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .journey-roadmap-hud {
+        grid-template-columns: 1fr;
+      }
+      .cursor-light, .cursor-dot {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dynamic Interactive Cursor Light Overlay -->
+  <div class="cursor-light" id="cursorLight"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Top Navigation Bar -->
+  <header>
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-badge-red">FQ</span>
+        <span class="brand-title-text">FATIMA QAMAR</span>
+      </a>
+
+      <ul class="nav-links" id="navLinksContainer">
+        <li><a href="#about" class="nav-link">ABOUT</a></li>
+        <li><a href="#research" class="nav-link">RESEARCH</a></li>
+        <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+        <li><a href="#hackathons" class="nav-link">HACKATHONS</a></li>
+        <li><a href="#skills" class="nav-link">SKILLS</a></li>
+        <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+        <li><a href="#contact" class="nav-link">CONTACT</a></li>
+      </ul>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         01. HERO SECTION
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div style="max-width: 950px;">
+          <!-- Giant Bold Headline -->
+          <h1 class="hero-main-title">FATIMA<br>QAMAR</h1>
+
+          <div class="hero-sub-title">BS COMPUTER SCIENCE STUDENT | AI & SOFTWARE DEVELOPER</div>
+
+          <!-- Aesthetic Fade Description Box -->
+          <div class="hero-desc-box">
+            <p class="hero-desc-text" style="margin-bottom: 0;">
+              Building practical AI-powered solutions and developing hands-on research experience in Artificial Intelligence, Machine Learning, and Computer Vision.
+            </p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="hero-action-row">
+            <a href="#projects" class="cyber-btn btn-cyber-red">EXPLORE PROJECTS</a>
+            <a href="#research" class="cyber-btn btn-cyber-dark">VIEW RESEARCH</a>
+            <a href="https://github.com/Fatima-Qamar" target="_blank" rel="noopener" class="cyber-btn btn-cyber-outline">🌐 GITHUB</a>
+            <a href="https://www.linkedin.com/in/fatima-qamar-8a38933a5" target="_blank" rel="noopener" class="cyber-btn btn-cyber-outline">💼 LINKEDIN</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         02. ABOUT ME
+         ========================================================================== -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">ABOUT ME</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="cyber-card accent-bar-left">
+            <p class="about-text-p">
+              I am a BS Computer Science student at PAF-IAST with a strong interest in Artificial Intelligence, Machine Learning, and research. I enjoy turning ideas into practical solutions using AI-assisted development and continuously improving my technical understanding.
+            </p>
+            <p class="about-text-p">
+              I have developed AI-based and software projects, participated in AI-focused hackathons, and recently started my undergraduate research journey under faculty guidance. I am highly motivated to gain hands-on research experience and contribute to real-world AI projects.
+            </p>
+            
+            <div class="about-vision-box">
+              <div class="about-vision-title">Long-Term Academic Goal</div>
+              <p class="about-text-p" style="margin: 0; color: #fff;">
+                My long-term goal is to pursue a direct PhD after my BS in Computer Science and build a research career in AI and related fields.
+              </p>
+            </div>
+          </div>
+
+          <div class="cyber-card">
+            <div style="font-size: 0.8rem; color: var(--accent-red); font-weight: bold; margin-bottom: 1.5rem; text-transform: uppercase;">
+              PROFILE METRICS
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+              <div style="background: #090a0f; border: 1px solid var(--border-bright); padding: 1.25rem; text-align: center;">
+                <div style="font-family: var(--font-title); font-size: 2.2rem; font-weight: 900; color: var(--accent-red);">3.33</div>
+                <div style="font-size: 0.75rem; color: var(--text-dim);">CGPA @ PAF-IAST</div>
+              </div>
+              <div style="background: #090a0f; border: 1px solid var(--border-bright); padding: 1.25rem; text-align: center;">
+                <div style="font-family: var(--font-title); font-size: 2.2rem; font-weight: 900; color: var(--accent-green);">04+</div>
+                <div style="font-size: 0.75rem; color: var(--text-dim);">FEATURED PROJECTS</div>
+              </div>
+              <div style="background: #090a0f; border: 1px solid var(--border-bright); padding: 1.25rem; text-align: center;">
+                <div style="font-family: var(--font-title); font-size: 2.2rem; font-weight: 900; color: var(--accent-cyan);">01</div>
+                <div style="font-size: 0.75rem; color: var(--text-dim);">ACTIVE RESEARCH</div>
+              </div>
+              <div style="background: #090a0f; border: 1px solid var(--border-bright); padding: 1.25rem; text-align: center;">
+                <div style="font-family: var(--font-title); font-size: 2.2rem; font-weight: 900; color: var(--accent-yellow);">100%</div>
+                <div style="font-size: 0.75rem; color: var(--text-dim);">RESEARCH DEDICATION</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         UNDERGRADUATE RESEARCH 🔬
+         ========================================================================== -->
+    <section id="research">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">UNDERGRADUATE RESEARCH 🔬</h2>
+        </div>
+
+        <div class="cyber-card accent-bar-left">
+          <p class="about-text-p" style="font-size: 1.02rem; color: #ffffff; line-height: 1.7; margin-bottom: 1.2rem;">
+            I am currently involved in an undergraduate research project under faculty guidance at PAF-IAST. This experience is helping me develop practical research skills, including literature review, research methodology, data analysis, and academic problem-solving.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem; border-top: 1px solid var(--border-dim); padding-top: 1rem; margin-top: 0.5rem;">
+            <div>
+              <strong style="color: var(--accent-green); text-transform: uppercase;">STATUS:</strong>
+              <span style="color: #ffffff; font-weight: 700; margin-left: 0.4rem;">ACTIVE RESEARCHER</span>
+            </div>
+            <div>
+              <strong style="color: var(--accent-red); text-transform: uppercase;">FOCUS:</strong>
+              <span style="color: var(--text-code); font-weight: 600; margin-left: 0.4rem;">Artificial Intelligence • Machine Learning • Research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04. FEATURED PROJECTS 🚀 (CLEAN GRID WITH LIVE & GITHUB LINKS)
+         ========================================================================== -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">FEATURED PROJECTS 🚀</h2>
+        </div>
+
+        <div class="projects-grid-cyber">
+          <!-- Project 01: CoolCity AI -->
+          <div class="project-card-cyber">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="project-role-tag">Team Lead / Developer</span>
+                <a href="https://cool-city-ai.vercel.app/" target="_blank" rel="noopener" style="font-size: 0.75rem; color: var(--accent-green); font-weight: bold; text-decoration: none;">LIVE DEMO ↗</a>
+              </div>
+              <h3 class="project-title-h3">CoolCity AI</h3>
+              <div class="project-sub-tag">AI-Powered Urban Heat Intervention Planner</div>
+              <p class="project-p-text">
+                Developed during FortyGuard Hackathon '26 from concept to functional prototype using AI-assisted development workflows. Analyses urban heat risks and identifies cooling interventions for cities.
+              </p>
+              <div class="project-focus-row">
+                <span class="focus-badge">AI</span>
+                <span class="focus-badge">Data Analysis</span>
+                <span class="focus-badge">Smart Cities</span>
+                <span class="focus-badge">Climate Tech</span>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <a href="https://cool-city-ai.vercel.app/" target="_blank" rel="noopener" class="cyber-btn btn-cyber-red" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">LIVE PROTOTYPE ↗</a>
+              <button class="btn-detail-cyber" data-project="coolcity">DETAILS <span>→</span></button>
+            </div>
+          </div>
+
+          <!-- Project 02: AI Crop Disease Detection -->
+          <div class="project-card-cyber">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="project-role-tag">Developer</span>
+              </div>
+              <h3 class="project-title-h3">AI Crop Disease Detection</h3>
+              <div class="project-sub-tag">AI-Based Computer Vision System</div>
+              <p class="project-p-text">
+                Currently developing an AI-based computer vision system that analyses plant leaf images to identify possible diseases and support agricultural decision-making.
+              </p>
+              <div class="project-focus-row">
+                <span class="focus-badge">AI</span>
+                <span class="focus-badge">Computer Vision</span>
+                <span class="focus-badge">Image Analysis</span>
+                <span class="focus-badge">Agriculture</span>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <a href="https://github.com/Fatima-Qamar" target="_blank" rel="noopener" class="cyber-btn btn-cyber-dark" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">VIEW ON GITHUB ↗</a>
+              <button class="btn-detail-cyber" data-project="cropdisease">DETAILS <span>→</span></button>
+            </div>
+          </div>
+
+          <!-- Project 03: Fixora -->
+          <div class="project-card-cyber">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="project-role-tag">Founder & CEO</span>
+              </div>
+              <h3 class="project-title-h3">Fixora</h3>
+              <div class="project-sub-tag">AI-Powered Home Services Marketplace</div>
+              <p class="project-p-text">
+                Currently developing Fixora as Founder & CEO, with the goal of creating an AI-powered platform connecting customers with home service providers. Currently in development.
+              </p>
+              <div class="project-focus-row">
+                <span class="focus-badge">AI</span>
+                <span class="focus-badge">Product Dev</span>
+                <span class="focus-badge">Marketplace</span>
+                <span class="focus-badge">Entrepreneurship</span>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <button class="btn-detail-cyber" data-project="fixora">DETAILS <span>→</span></button>
+            </div>
+          </div>
+
+          <!-- Project 04: E-Commerce Product Filtering Website -->
+          <div class="project-card-cyber">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="project-role-tag">Front-End Developer</span>
+              </div>
+              <h3 class="project-title-h3">E-Commerce Product Filtering Website</h3>
+              <div class="project-sub-tag">Product Discovery & Filtering Platform</div>
+              <p class="project-p-text">
+                Developed a responsive e-commerce website with product browsing and filtering functionality.
+              </p>
+              <div class="project-focus-row">
+                <span class="focus-badge">Web Dev</span>
+                <span class="focus-badge">UI/UX</span>
+                <span class="focus-badge">JavaScript</span>
+                <span class="focus-badge">React.js</span>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <a href="https://github.com/Fatima-Qamar" target="_blank" rel="noopener" class="cyber-btn btn-cyber-dark" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">VIEW ON GITHUB ↗</a>
+              <button class="btn-detail-cyber" data-project="ecommerce">DETAILS <span>→</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05. HACKATHONS 🏆 (WITH COOLCITY LIVE DEMO LINK)
+         ========================================================================== -->
+    <section id="hackathons">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">HACKATHONS & INNOVATION 🏆</h2>
+        </div>
+
+        <div class="hackathon-card-hud">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="hackathon-badge-yellow">🏆 HACKATHON FEATURE</span>
+              <h3 style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 900; color: #fff; margin-top: 0.3rem;">FORTYGUARD HACKATHON '26</h3>
+              <div style="color: var(--accent-yellow); font-weight: 700; margin-bottom: 1rem;">CoolCity AI — AI-Powered Urban Heat Intervention Planner</div>
+            </div>
+            <a href="https://cool-city-ai.vercel.app/" target="_blank" rel="noopener" class="cyber-btn btn-cyber-red">VIEW LIVE PROTOTYPE ↗</a>
+          </div>
+
+          <div style="display: flex; gap: 2rem; margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-code);">
+            <div><strong style="color: #fff;">Role:</strong> Team Lead / Developer</div>
+            <div><strong style="color: #fff;">Track:</strong> Resilient Cities & Infrastructure</div>
+          </div>
+
+          <p style="font-size: 0.92rem; color: var(--text-code); line-height: 1.6; margin-bottom: 1.25rem;">
+            Developed a practical AI-powered solution addressing urban heat challenges, taking the project from initial concept to a functional prototype using AI-assisted development. Live deployed at <a href="https://cool-city-ai.vercel.app/" target="_blank" rel="noopener" style="color: var(--accent-yellow); text-decoration: underline;">cool-city-ai.vercel.app</a>.
+          </p>
+
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">Demonstrated Skills:</div>
+          <div class="research-area-pills">
+            <span class="research-pill" style="border-color: var(--accent-yellow); color: var(--accent-yellow);">Problem-solving</span>
+            <span class="research-pill" style="border-color: var(--accent-yellow); color: var(--accent-yellow);">AI-assisted development</span>
+            <span class="research-pill" style="border-color: var(--accent-yellow); color: var(--accent-yellow);">Rapid prototyping</span>
+            <span class="research-pill" style="border-color: var(--accent-yellow); color: var(--accent-yellow);">Team collaboration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         06. SKILLS & CAPABILITIES 💻
+         ========================================================================== -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">TECHNICAL SKILLS 💻</h2>
+        </div>
+
+        <!-- Realistic & Credible Cyber Pill Grid -->
+        <div class="skill-pills-container">
+          <!-- Programming -->
+          <div class="skill-pill-box" data-color="yellow">
+            <span>⚙️ C++</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">PROGRAMMING</div>
+              <div class="tooltip-level">INTERMEDIATE</div>
+            </div>
+          </div>
+
+          <div class="skill-pill-box" data-color="yellow">
+            <span>⚡ JAVASCRIPT</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">PROGRAMMING</div>
+              <div class="tooltip-level">INTERMEDIATE</div>
+            </div>
+          </div>
+
+          <div class="skill-pill-box" data-color="cyan">
+            <span>🎨 HTML / CSS</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">FRONTEND</div>
+              <div class="tooltip-level">PROFICIENT</div>
+            </div>
+          </div>
+
+          <!-- Development -->
+          <div class="skill-pill-box" data-color="cyan">
+            <span>⚛️ REACT.JS</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">FRAMEWORK</div>
+              <div class="tooltip-level">INTERMEDIATE</div>
+            </div>
+          </div>
+
+          <div class="skill-pill-box" data-color="cyan">
+            <span>📱 FLUTTER</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">MOBILE DEV</div>
+              <div class="tooltip-level">INTERMEDIATE</div>
+            </div>
+          </div>
+
+          <div class="skill-pill-box" data-color="purple">
+            <span>🔌 REST APIs</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">BACKEND / ARCH</div>
+              <div class="tooltip-level">WORKING KNOWLEDGE</div>
+            </div>
+          </div>
+
+          <div class="skill-pill-box" data-color="purple">
+            <span>🐙 GIT / GITHUB</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">DEV TOOLS</div>
+              <div class="tooltip-level">WORKING KNOWLEDGE</div>
+            </div>
+          </div>
+
+          <!-- AI & ML -->
+          <div class="skill-pill-box" data-color="green">
+            <span>🧠 AI / ML FUNDAMENTALS</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">ARTIFICIAL INTELLIGENCE</div>
+              <div class="tooltip-level">FOUNDATIONAL</div>
+            </div>
+          </div>
+
+          <div class="skill-pill-box" data-color="green">
+            <span>👁️ COMPUTER VISION</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">ARTIFICIAL INTELLIGENCE</div>
+              <div class="tooltip-level">FOUNDATIONAL / DEVELOPING</div>
+            </div>
+          </div>
+
+          <div class="skill-pill-box" data-color="green">
+            <span>🤖 AI-ASSISTED DEVELOPMENT</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">AI WORKFLOW</div>
+              <div class="tooltip-level">STRONG</div>
+            </div>
+          </div>
+
+          <!-- Research -->
+          <div class="skill-pill-box" data-color="red">
+            <span>🔬 LITERATURE REVIEW</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">RESEARCH</div>
+              <div class="tooltip-level">DEVELOPING</div>
+            </div>
+          </div>
+
+          <div class="skill-pill-box" data-color="red">
+            <span>📊 DATA ANALYSIS & ML MODELING</span>
+            <div class="skill-tooltip">
+              <div class="tooltip-cat">RESEARCH</div>
+              <div class="tooltip-level">DEVELOPING</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         07 & 08. EXPERIENCE & LEADERSHIP 💼
+         ========================================================================== -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">EXPERIENCE & LEADERSHIP 💼</h2>
+        </div>
+
+        <div class="timeline-hud">
+          <!-- Item 01: Founder & CEO — Fixora -->
+          <div class="timeline-block">
+            <div class="cyber-card accent-bar-left">
+              <div style="font-size: 0.72rem; color: var(--accent-red); font-weight: 800;">LEADERSHIP & ENTREPRENEURSHIP</div>
+              <h3 style="font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: #fff; margin-top: 0.2rem;">FOUNDER & CEO — FIXORA</h3>
+              <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.75rem;">AI-Powered Home Services Marketplace (In Development)</div>
+              <p style="font-size: 0.88rem; color: var(--text-code); margin-bottom: 0.5rem;">
+                Currently leading product concept and planning, full-stack project development, AI-assisted prototyping, problem-solving, and product strategy preparing for launch.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 02: Marketing & PR Team Member -->
+          <div class="timeline-block">
+            <div class="cyber-card accent-bar-left">
+              <div style="font-size: 0.72rem; color: var(--accent-red); font-weight: 800;">MARKETING & OUTREACH</div>
+              <h3 style="font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: #fff; margin-top: 0.2rem;">MARKETING & PR TEAM MEMBER</h3>
+              <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.75rem;">Scale Up • Duration: 6 Months</div>
+              <ul style="margin-left: 1.2rem; font-size: 0.88rem; color: var(--text-code);">
+                <li>Working in Marketing and Public Relations, contributing to communication, promotional activities, outreach, and team coordination.</li>
+                <li>Gained practical experience in professional communication, teamwork, and audience engagement.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 03: Class Representative -->
+          <div class="timeline-block">
+            <div class="cyber-card accent-bar-left">
+              <div style="font-size: 0.72rem; color: var(--accent-red); font-weight: 800;">ACADEMIC LEADERSHIP</div>
+              <h3 style="font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: #fff; margin-top: 0.2rem;">CLASS REPRESENTATIVE</h3>
+              <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.75rem;">PAF-IAST University</div>
+              <ul style="margin-left: 1.2rem; font-size: 0.88rem; color: var(--text-code);">
+                <li>Representing the class and communicating academic updates, student concerns, and coordination matters between students and faculty.</li>
+                <li>Developed leadership, communication, coordination, and responsibility skills.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 04: Full Stack Development Intern -->
+          <div class="timeline-block">
+            <div class="cyber-card accent-bar-left">
+              <div style="font-size: 0.72rem; color: var(--accent-red); font-weight: 800;">SOFTWARE INTERNSHIP</div>
+              <h3 style="font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: #fff; margin-top: 0.2rem;">FULL STACK DEVELOPMENT INTERN</h3>
+              <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.75rem;">Pregspft (Pvt.) Ltd. • Duration: 3 Months</div>
+              <ul style="margin-left: 1.2rem; font-size: 0.88rem; color: var(--text-code);">
+                <li>Built and maintained front-end and back-end features using modern web technologies.</li>
+                <li>Worked on real development tasks and gained practical experience with full-stack workflows.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 05: Volunteer — University Events Team -->
+          <div class="timeline-block">
+            <div class="cyber-card">
+              <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 800;">VOLUNTEER & LOGISTICS</div>
+              <h3 style="font-family: var(--font-title); font-size: 1.1rem; font-weight: 800; color: #fff; margin-top: 0.2rem;">VOLUNTEER — UNIVERSITY EVENTS TEAM</h3>
+              <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.88rem; margin-bottom: 0.5rem;">PAF-IAST University</div>
+              <ul style="margin-left: 1.2rem; font-size: 0.88rem; color: var(--text-code);">
+                <li>Supported event planning, field logistics, and promotional communication for university-wide workshops and events.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 06: Online Community Coordinator -->
+          <div class="timeline-block">
+            <div class="cyber-card">
+              <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 800;">COMMUNITY ENGAGEMENT</div>
+              <h3 style="font-family: var(--font-title); font-size: 1.1rem; font-weight: 800; color: #fff; margin-top: 0.2rem;">ONLINE COMMUNITY COORDINATOR</h3>
+              <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.88rem; margin-bottom: 0.5rem;">Forever</div>
+              <ul style="margin-left: 1.2rem; font-size: 0.88rem; color: var(--text-code);">
+                <li>Onboarded and engaged community members.</li>
+                <li>Managed regular follow-ups and communication to support community engagement.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         09. EDUCATION 🎓 & 10. CERTIFICATIONS 🏅
+         ========================================================================== -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">EDUCATION & CERTIFICATIONS 🎓</h2>
+        </div>
+
+        <div class="edu-grid-hud">
+          <div class="cyber-card accent-bar-left">
+            <div style="font-size: 0.72rem; color: var(--accent-red); font-weight: 800; text-transform: uppercase;">ACADEMIC RECORD</div>
+            <h3 style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 900; color: #fff; margin-top: 0.4rem;">BS COMPUTER SCIENCE</h3>
+            <div style="color: var(--accent-cyan); font-weight: 700; font-size: 1rem; margin-bottom: 1rem;">PAF-IAST University</div>
+            
+            <div class="status-box-cyber" style="margin-bottom: 1rem;">
+              <span>CGPA: 3.33 / 4.00</span>
+              <span style="color: var(--text-muted);">|</span>
+              <span style="color: var(--accent-green);">UNDERGRADUATE STUDENT</span>
+            </div>
+          </div>
+
+          <div class="cyber-card">
+            <div style="font-size: 0.72rem; color: var(--accent-yellow); font-weight: 800; margin-bottom: 0.75rem; text-transform: uppercase;">CERTIFICATIONS & ACHIEVEMENTS</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.85rem; color: var(--text-code);">
+              <li style="padding: 0.5rem; background: #090a0f; border: 1px solid var(--border-bright);">🎨 <strong>NAVTTC Certification:</strong> UX/UI Design</li>
+              <li style="padding: 0.5rem; background: #090a0f; border: 1px solid var(--border-bright);">💻 <strong>C++ Programming Certification</strong></li>
+              <li style="padding: 0.5rem; background: #090a0f; border: 1px solid var(--border-bright);">🏆 <strong>Participant:</strong> AI Hackathon</li>
+              <li style="padding: 0.5rem; background: #090a0f; border: 1px solid var(--border-bright);">📜 <strong>Volunteer Certificate:</strong> International Expo (University Level)</li>
+              <li style="padding: 0.5rem; background: #090a0f; border: 1px solid var(--border-bright);">🥇 <strong>Winner:</strong> Tug of War, College Sports</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         11. RESEARCH INTERESTS 🔬
+         ========================================================================== -->
+    <section id="interests">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">RESEARCH INTERESTS 🔬</h2>
+        </div>
+
+        <div class="interests-grid-hud">
+          <div class="interest-box-cyber">
+            <div class="interest-icon-cyber">🤖</div>
+            <div class="interest-name-cyber">ARTIFICIAL INTELLIGENCE</div>
+          </div>
+          <div class="interest-box-cyber">
+            <div class="interest-icon-cyber">📊</div>
+            <div class="interest-name-cyber">MACHINE LEARNING</div>
+          </div>
+          <div class="interest-box-cyber">
+            <div class="interest-icon-cyber">🧠</div>
+            <div class="interest-name-cyber">DEEP LEARNING</div>
+          </div>
+          <div class="interest-box-cyber">
+            <div class="interest-icon-cyber">👁️</div>
+            <div class="interest-name-cyber">COMPUTER VISION</div>
+          </div>
+          <div class="interest-box-cyber">
+            <div class="interest-icon-cyber">🛡️</div>
+            <div class="interest-name-cyber">AI SECURITY</div>
+          </div>
+          <div class="interest-box-cyber">
+            <div class="interest-icon-cyber">🔒</div>
+            <div class="interest-name-cyber">AI FOR CYBERSECURITY</div>
+          </div>
+          <div class="interest-box-cyber">
+            <div class="interest-icon-cyber">⚔️</div>
+            <div class="interest-name-cyber">ADVERSARIAL AI</div>
+          </div>
+          <div class="interest-box-cyber">
+            <div class="interest-icon-cyber">✨</div>
+            <div class="interest-name-cyber">TRUSTWORTHY AI</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         12. MY RESEARCH JOURNEY
+         ========================================================================== -->
+    <section id="journey">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">MY RESEARCH JOURNEY</h2>
+        </div>
+
+        <div class="cyber-card accent-bar-left" style="margin-bottom: 2rem;">
+          <p class="about-text-p" style="margin: 0;">
+            I am currently beginning my research journey as an undergraduate student and working under faculty guidance. My goal is to develop strong research skills through real projects, experimentation, literature review, and practical AI applications so that I can pursue a direct PhD after graduation.
+          </p>
+        </div>
+
+        <div class="journey-roadmap-hud">
+          <div class="journey-step-hud">
+            <div style="font-size: 0.72rem; color: var(--accent-red); font-weight: 800;">PHASE 01</div>
+            <h4 style="font-family: var(--font-title); font-size: 1.1rem; color: #fff; margin: 0.3rem 0;">Undergraduate Foundation</h4>
+            <p style="font-size: 0.82rem; color: var(--text-code);">Building strong foundations in ML, literature review, and faculty-guided research projects.</p>
+          </div>
+          <div class="journey-step-hud">
+            <div style="font-size: 0.72rem; color: var(--accent-red); font-weight: 800;">PHASE 02</div>
+            <h4 style="font-family: var(--font-title); font-size: 1.1rem; color: #fff; margin: 0.3rem 0;">RA Assistantship</h4>
+            <p style="font-size: 0.82rem; color: var(--text-code);">Executing empirical research, data analysis, and co-authoring scientific papers.</p>
+          </div>
+          <div class="journey-step-hud">
+            <div style="font-size: 0.72rem; color: var(--accent-red); font-weight: 800;">PHASE 03</div>
+            <h4 style="font-family: var(--font-title); font-size: 1.1rem; color: #fff; margin: 0.3rem 0;">Direct PhD Admission</h4>
+            <p style="font-size: 0.82rem; color: var(--text-code);">Enrolling in a direct PhD program after BS CS to lead cutting-edge AI research.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         13. CONTACT (GENERIC CLEAN FORM & DIRECT LINKS)
+         ========================================================================== -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">LET'S CONNECT</h2>
+        </div>
+
+        <div class="contact-grid-hud">
+          <div>
+            <div class="contact-box-item">
+              <div>
+                <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">EMAIL ADDRESS</div>
+                <a href="mailto:7atima.qamar@gmail.com" style="color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem;">7atima.qamar@gmail.com</a>
+              </div>
+              <button class="cyber-btn btn-cyber-red" id="copyEmailBtn" style="padding: 0.35rem 0.7rem; font-size: 0.7rem;">COPY</button>
+            </div>
+
+            <div class="contact-box-item">
+              <div>
+                <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">LINKEDIN PROFILE</div>
+                <a href="https://www.linkedin.com/in/fatima-qamar-8a38933a5" target="_blank" rel="noopener" style="color: #fff; text-decoration: none; font-weight: bold; font-size: 0.85rem;">fatima-qamar-8a38933a5</a>
+              </div>
+              <a href="https://www.linkedin.com/in/fatima-qamar-8a38933a5" target="_blank" rel="noopener" class="cyber-btn btn-cyber-dark" style="padding: 0.35rem 0.7rem; font-size: 0.7rem;">OPEN ↗</a>
+            </div>
+
+            <div class="contact-box-item">
+              <div>
+                <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">GITHUB REPOSITORIES</div>
+                <a href="https://github.com/Fatima-Qamar" target="_blank" rel="noopener" style="color: #fff; text-decoration: none; font-weight: bold; font-size: 0.85rem;">Fatima-Qamar</a>
+              </div>
+              <a href="https://github.com/Fatima-Qamar" target="_blank" rel="noopener" class="cyber-btn btn-cyber-dark" style="padding: 0.35rem 0.7rem; font-size: 0.7rem;">OPEN ↗</a>
+            </div>
+          </div>
+
+          <!-- Clean Generic Contact Form -->
+          <div class="cyber-card">
+            <form class="contact-form-cyber" id="contactForm">
+              <div>
+                <label style="font-size: 0.75rem; color: var(--text-dim); display: block; margin-bottom: 0.3rem;">YOUR NAME</label>
+                <input type="text" class="form-input-cyber" placeholder="Enter your full name..." style="width: 100%;" required>
+              </div>
+              <div>
+                <label style="font-size: 0.75rem; color: var(--text-dim); display: block; margin-bottom: 0.3rem;">YOUR EMAIL</label>
+                <input type="email" class="form-input-cyber" placeholder="Enter your email address..." style="width: 100%;" required>
+              </div>
+              <div>
+                <label style="font-size: 0.75rem; color: var(--text-dim); display: block; margin-bottom: 0.3rem;">MESSAGE / PROPOSAL</label>
+                <textarea class="form-input-cyber" rows="4" placeholder="Write your message here..." style="width: 100%;" required></textarea>
+              </div>
+              <button type="submit" class="cyber-btn btn-cyber-red">SEND MESSAGE 🚀</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Deep Dive -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-box-hud">
+      <button class="modal-close-btn" id="modalCloseBtn">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast Alert -->
+  <div class="toast-hud" id="toastNotification">
+    <span id="toastMsg">Action executed cleanly!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div>© 2026 FATIMA QAMAR. ALL RIGHTS RESERVED.</div>
+      <a href="#hero" style="color: var(--accent-red); text-decoration: none; font-weight: bold;">[RETURN TO TOP ↑]</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
